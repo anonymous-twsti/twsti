@@ -9,18 +9,17 @@ import matplotlib.pyplot as plt
 from sage.misc.misc import cputime
 
 
-if len(sys.argv) != 3:
-    print("{} requires the input two conductors for drawing".format(sys.argv[0][2:]) + "\n" + "Example: {} m1 m2"
+if len(sys.argv) != 4:
+    print("{} requires the number of orbits and two conductors for drawing".format(sys.argv[0][2:]) + "\n" + "Example: {} orb m1 m2"
           .format(sys.argv[0]));
     sys.exit(2);
 
-
 ## How many orbits ?
-orb=1
+orb=int(sys.argv[1]);
 
 ## Input of 2 conductors for drawing next to one another
-m1  = int(sys.argv[1])
-m2 = int(sys.argv[2])
+m1  = int(sys.argv[2])
+m2 = int(sys.argv[3])
 conductors = [m1,m2]
 
 ## Hardcoded parameter
