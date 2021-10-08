@@ -1,5 +1,5 @@
 # Tw-STI
-Code for submission #316 (EUROCRYPT'21): "Log-S-unit lattices using Explicit Stickelberger Generators to solve Approx Ideal-SVP"
+Code for submission #316 (EUROCRYPT'22): "Log-S-unit lattices using Explicit Stickelberger Generators to solve Approx Ideal-SVP"
 
 
 ### Environment
@@ -66,6 +66,35 @@ For simplicity, we suppose that everything is executed from `./scripts`, but it 
 ```
 
 
+### Plotting results
+
+First, create a `./figures` folder besides the `./scripts` folder.
+
+##### Obtaining figures 1.1 (also 5.3) and 5.4 
+Run the `plot_minGF.py` script:
+```
+./plot_minGF.py
+```
+This creates files `GF.png` (Fig.1.1 and 5.3) and `zoomGF.png` (Fig.5.4) in folder `./figures`.
+
+
+##### Obtaining figure 5.1
+Run the `plot_sets_2fig.py` script with two chosen conductors m1 and m2 for orb orbits as:
+```
+./plot_sets_2fig.py <orb> <m1> <m2>
+```
+This creates file `z<m1>-z<m2>_comparison_sets_d<orb>.png` in folder `./figures`.
+
+
+##### Obtaining Fig. 5.2
+Run the `plot_raw_bkz_2fig.py` script with two chosen conductors m1 and m2 for orb orbits as:
+```
+./plot_raw_bkz_2fig.py <orb> <m1> <m2>
+```
+This creates file `z<m1>-z<m2>_comparison_raw_bkz_d<orb>.png` in folder `./figures`.
+
+
+
 ### Files organisation
 
 ##### Folder list
@@ -74,6 +103,7 @@ For simplicity, we suppose that everything is executed from `./scripts`, but it 
 This will redirect logs, detach thread(s), detect the number of orbits and the available S-unit sets.
 - `./data`: this is where all data are put. Beware that the whole precomputation for the 192 fields weights > 1To.
 - `./logs`: logs of computations, including timings and many diagnostics.
+- `./figures`: plotted results
 
 
 ##### Naming conventions for precomputations
@@ -100,4 +130,5 @@ This will redirect logs, detach thread(s), detect the number of orbits and the a
 
 This work is published under the GNU General Public License (GPL) v3.0.
 See the LICENSE file for complete statement.
+
 
