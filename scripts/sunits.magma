@@ -1,3 +1,7 @@
+/*
+ * GPL-3.0-only (see LICENSE file)
+ */
+
 /* To be launched as: magma -b nf:=<tag> d:=<max_#orbs>  */
 load "../src/nf_magma.m";
 SetClassGroupBounds("GRH");

@@ -1,3 +1,5 @@
+# GPL-3.0-only (see LICENSE file)
+
 # Floating Point arithmetic handling
 from sage.all import *
 

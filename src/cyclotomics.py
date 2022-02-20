@@ -1,3 +1,5 @@
+# GPL-3.0-only (see LICENSE file)
+
 from sage.all import *
 
 from characters import * # For relative class number (Dirichlet characters)

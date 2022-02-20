@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 
-
+# GPL-3.0-only (see LICENSE file)
 
 import os
 from os import path
 import sys
 import matplotlib.pyplot as plt
-from sage.misc.misc import cputime
 
 
 

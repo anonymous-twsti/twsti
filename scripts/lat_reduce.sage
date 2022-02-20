@@ -1,5 +1,7 @@
 #!/usr/bin/env sage
 
+# GPL-3.0-only (see LICENSE file)
+
 # Small convenient hack to simulate as if we were always executing from '<trunk>/'
 import os
 import sys

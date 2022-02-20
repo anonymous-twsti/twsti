@@ -1,3 +1,5 @@
+# GPL-3.0-only (see LICENSE file)
+
 from sage.all import *
 
 import fp

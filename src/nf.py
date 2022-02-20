@@ -1,3 +1,5 @@
+# GPL-3.0-only (see LICENSE file)
+
 from sage.all import *
 import fp
 from pideal import *
@@ -139,6 +141,20 @@ def logarg_t2_norm_cf(la):
     t2_sq  = Re(2) * sum( exp(Re(2)*_la_inf) for _la_inf in la.inf );
     t2_n   = sqrt(t2_sq);
     return t2_n;
+
+
+# return ln N(b) from logarg of <a> = b . prod_{p in FB} p^vp
+# WARN: Works **only** with cyclotomic fields at this point
+#       Suppose b is coprime with FB.
+def logarg_lnSnorm_cf(la, fb):
+    assert (len(fb) == len(la.vp));
+    Re     = la.inf[0].parent();
+    b_prec = Re.precision();
+    ln_Nfb = [Re(pid_fast_norm(_pid).log(prec=b_prec)) for _pid in fb];
+    ln_Na  = Re(2)*sum(_la for _la in la.inf) - sum(_vp*_ln_Nfb for _vp, _ln_Nfb in zip(la.vp,ln_Nfb));
+    Na     = exp(ln_Na);
+    assert(fp.fp_check_zero("exp ln Nb in ZZ", [Na-round(Na)], target=b_prec, sloppy=True));
+    return ln_Na;
 
 
 # /!\ WARN: lifts only in the equation order ZZ[a] (K = Q(a))

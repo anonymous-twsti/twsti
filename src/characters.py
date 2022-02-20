@@ -1,3 +1,5 @@
+# GPL-3.0-only (see LICENSE file)
+
 import itertools;
 from sage.all import *
 from pideal   import *

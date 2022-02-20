@@ -1,5 +1,7 @@
 #!/usr/bin/env sage
 
+# GPL-3.0-only (see LICENSE file)
+
 # Small convenient hack to simulate as if we were always executing from '<trunk>/'
 import os
 import sys
@@ -68,7 +70,6 @@ phi = adapt_inf_places(K, phi, to_prec=W_PREC//2);
 # ----------------------------------------------------------------------------------
 # Loop on #orbits (fb)
 for d in range(dmax):
-#for d in [dmax-1]:
     print ("\n"+"-"*80 +"\nTargets for orbit=#{} \n".format(d+1)+"-"*80,
            flush=True);
 
