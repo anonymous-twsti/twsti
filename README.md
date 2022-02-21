@@ -61,11 +61,13 @@ For simplicity, we suppose that everything is executed from `./scripts`, but it 
 ```
 ./eval_geo.sh <m>
 ```
-9. Simulate approximation factors on 100 random targets for split prime ideals of size 2^100:
+9. Simulate approximation factors on 100 random targets for split prime ideals of size 2^100, and also run CDW on these targets:
 ```
 ./rand_targets.sh <m>
-./approx_factor.sh <m>                                                                             
+./approx_factor.sh <m>
+./cdw_protocol.sh <m>
 ```
+
 
 
 ### Plotting results

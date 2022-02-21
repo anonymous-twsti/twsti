@@ -125,20 +125,24 @@ def get_dpw_lower_bound(m):
 
 for m in list_m:
     print("Preprocessing data for m={}".format(m));
-
+    
     # Find dmax
     d_max = {};
     for _su in su_sets:
         d_max[_su] = find_max_nb_orbits(m, _su);
     print("\tMax nb orbits:\t{}".format(d_max));
-        
+    
+    
     # Find optimal number of orbits for sets cdw/urs/sat/su
     d_opt = {};
     for _su in su_sets:
         d_opt[_su] = find_optimal_nb_orbits(m, _su, d_max[_su]);
     print("\tOptimal d:\t{}".format(d_opt));
+    if all(_v == None for _v in d_max.values()):
+        print("\t\x1b[31m[Skip] No computed AFs for m={}\x1b[0m".format(m));
+        continue;
     if (d_opt != { "cdw":1, "urs":1, "sat":1, "su":d_max["su"] }):
-        print ("\t\x1b[31m[Warn] Unexpected optimal d_opt\x1b[0m");
+        print ("\t\x1b[33m[Warn] Unexpected optimal d_opt\x1b[0m");
 
     # DPW Lower bound (Hermite Factor)
     dpw = get_dpw_lower_bound(m);

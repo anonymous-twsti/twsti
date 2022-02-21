@@ -158,5 +158,4 @@ if [len(urs_raw_iso_tw),len(su_raw_iso_tw),len(sat_raw_iso_tw)] != [0,0,0]:
 
     
     plt.savefig(os.path.dirname(os.getcwd()) +'/figures/' + '/z{}-z{}_comparison_sets_d{}'.format(conductors[0], conductors[1],orb) + '.png')
-    plt.show()
     plt.close(fig)

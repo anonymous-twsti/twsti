@@ -60,7 +60,7 @@ opt_iso  = { "iso": True,       "noiso": False };
 opt_inf  = { "exp": "EXPANDED", "tw"   : "TWISTED" };
 
 measures_set = ["afsup", "gf", "afinf", "hf"];
-l_names      = [ "{}/{}/{}".format(_s,_iso,_inf) for _s,_iso,_inf in itertools.product(opt_sets, opt_iso.keys(), opt_inf.keys()) ];
+l_names      = [ "{}/{}/{}".format(su_set,_iso,_inf) for _iso,_inf in itertools.product(opt_iso.keys(), opt_inf.keys()) ];
 
 
 # ----------------------------------------------------------------------------------

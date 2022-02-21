@@ -39,7 +39,7 @@ for m in "$@"; do
     echo "Simulate IdSVP Solve using Tw-PHS for Q(z$m) [durs=$durs,dsat=$dsat,dsu=$dsu]";
     for suset in "urs" "sat" "su"; do
         dname="d${suset}"; dm=${!dname}; # Now, $dm=$durs or $dsat or $dsu according to $suset
-        for di in `seq 2 1 $dm`; do
+        for di in `seq 1 1 $dm`; do
             sage ${EXE_DIR}/approx_factor.sage ${DATA_DIR} ${NCORES} ${nf} ${di} set=${suset} 1>${LOGS_DIR}/${nf}_d${di}.aflog_${suset} 2>&1 ;
         done;
     done &

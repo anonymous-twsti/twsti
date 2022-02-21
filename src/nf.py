@@ -279,7 +279,7 @@ def logarg_log_embedding(la, p_inf, fb=[], inf_type='TWISTED', fb_type='TWISTED'
     w_prec = p_inf[0].codomain().precision();
     Re     = RealField(w_prec);
     assert(len(la.inf) == len(p_inf) and len(p_inf) == get_nb_inf_places(K));
-    assert(len(la.vp)  == len(fb));
+    assert(len(la.vp)  >= len(fb));
     assert((inf_type in NF_LOG_TYPE) and (fb_type in NF_LOG_TYPE));
     
     r1, r2 = K.signature();

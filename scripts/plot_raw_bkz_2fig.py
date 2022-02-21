@@ -141,6 +141,5 @@ for logemb in ['exp']:
     plt.legend(handles, labels, loc='upper center',fontsize=12)
 
     plt.savefig(os.path.dirname(os.getcwd()) +'/figures/' + '/z{}-z{}_comparison_raw_bkz_d{}'.format(conductors[0], conductors[1],orb) + '.png')
-    plt.show()
     
     plt.close(fig)

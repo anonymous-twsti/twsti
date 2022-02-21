@@ -38,6 +38,9 @@ Y = {_su:[] for _su in su_sets };
 
 for m in list_m:
     data_file_path = data_dir + "/z{}/z{}.gf".format(m,m);
+    if not (os.path.exists(data_file_path)):
+        print("\x1b[33m[Warn] Skipping m={} (no gf file)\x1b[0m".format(m));
+        continue;
 
     for _line in open(data_file_path, 'r'):
         if _line.startswith('#'):

@@ -2,19 +2,12 @@
 
 # cf ../data/list_ms
 
-# Script folder
-EXE_DIR=$(dirname $(readlink -f $0));
-
-# Data / Logs folder
-node_name=`uname -n`;
-if [[ ${node_name} == "vegeta" ]]; then
-    DATA_ROOT="/data/obernard_logsunit";
-    # DATA_ROOT="/data/thnguyen_logsunit";
-else
-    DATA_ROOT=$(dirname ${EXE_DIR});
-fi;
-DATA_DIR="${DATA_ROOT}/data"; 
-LOGS_DIR="${DATA_ROOT}/logs";
+# Root dir
+ROOT_DIR=$(dirname $(dirname $(readlink -f $0)));
+# Subdirs: Exe/Data/logs
+EXE_DIR="${ROOT_DIR}/scripts";
+DATA_DIR="${ROOT_DIR}/data"; 
+LOGS_DIR="${ROOT_DIR}/logs";
 
 
 # Just check that parent folders are indeed where they should be
